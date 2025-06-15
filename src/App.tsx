@@ -1,24 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useAuth } from './hooks/useAuth';
+import { AuthContainer } from './components/auth/AuthContainer';
+import { Dashboard } from './components/dashboard/Dashboard';
+import './styles/components.css';
 
 function App() {
+  const { user, loading } = useAuth();
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gray-800 text-white flex flex-col justify-center items-center">
+        <div className="loading-spinner w-10 h-10"></div>
+        <p className="mt-5 text-lg">
+          Loading...
+        </p>
+      </div>
+    );
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {user ? <Dashboard /> : <AuthContainer />}
     </div>
   );
 }
