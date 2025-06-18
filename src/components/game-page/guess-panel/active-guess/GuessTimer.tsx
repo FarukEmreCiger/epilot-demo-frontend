@@ -23,8 +23,7 @@ export const GuessTimer = ({ guess }: GuessTimerProps) => {
             const now = new Date().getTime();
             const timeLeft = endTime - now;
 
-            if (timeLeft <= 0) {
-                setIsVisible(false);
+            if (timeLeft < 0) {
                 return;
             }
 
