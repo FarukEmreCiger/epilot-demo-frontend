@@ -34,7 +34,7 @@
 }
 
 .score-number {
-    @apply !font-medium mb-2 text-['clamp(2rem,5vw,3rem)'] text-gold;
+    @apply !font-medium mb-2 text-[clamp(2rem,5vw,3rem)] text-gold;
     @apply transition-all duration-300 ease-in-out;
 }
 

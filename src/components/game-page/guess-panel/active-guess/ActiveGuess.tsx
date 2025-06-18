@@ -5,10 +5,7 @@ import { priceService } from "../../../../services/price.service";
 import {
     Card,
     CardContent,
-    Typography,
     List,
-    Box,
-    Avatar,
     Fade,
     SvgIcon
 } from "@mui/material";
@@ -19,56 +16,10 @@ import FlashOnIcon from '@mui/icons-material/FlashOn';
 import TimerIcon from '@mui/icons-material/Timer';
 import { ArrowCircleDown, ArrowCircleUp } from "@mui/icons-material";
 import { GuessTimer } from './GuessTimer';
-import { GameStatusBadge } from './GameStatusBadge';
+import { GameCardField } from "./GameCardField";
+import { GameStatus } from "./GameStatus";
 
-const GameStatus = ({ result }: { result?: string }) => {
-    const getStatus = () => {
-        if (result === "correct") return { emoji: "🏆", text: "Congratulations! You won!", color: "#00ff88" };
-        if (result === "incorrect") return { emoji: "💥", text: "You lost! Maybe next time.", color: "#ff4757" };
-        return { emoji: "🎯", text: "ACTIVE PREDICTION", color: "#00d4ff" };
-    };
 
-    const status = getStatus();
-
-    return (
-        <GameStatusBadge 
-            emoji={status.emoji} 
-            text={status.text} 
-            color={status.color} 
-            animate={status.text !== "ACTIVE PREDICTION"}
-        />
-    );
-};
-
-const GameCardField = ({ 
-    label, 
-    value, 
-    icon, 
-    colorClass 
-}: { 
-    label: string; 
-    value: any; 
-    icon: React.ReactNode; 
-    colorClass?: string; 
-}) => {
-    return (
-        <Box className="game-card-field-box">
-            <Avatar 
-                className={`game-card-field-avatar ${colorClass}`}
-            >
-                {icon}
-            </Avatar>
-            <Box className="game-card-field-content-box">
-                <Typography variant="body1" className="game-card-field-label">
-                    {label}
-                </Typography>
-                <Typography variant="body1" className="game-card-field-value">
-                    {value}
-                </Typography>
-            </Box>
-        </Box>
-    );
-};
 
 export const ActiveGuess = ({ activeGuess }: { activeGuess: Guess }) => {
     const [show, setShow] = useState(false);
@@ -80,9 +31,9 @@ export const ActiveGuess = ({ activeGuess }: { activeGuess: Guess }) => {
     if (!activeGuess) return null;
 
     const getStatusBorderClass = () => {
-        if (activeGuess.result === "correct") return "border-primary-green";
-        if (activeGuess.result === "incorrect") return "border-error-red";
-        return "border-info-blue";
+        if (activeGuess.result === "correct") return "!border-primary-green !bg-primary-green";
+        if (activeGuess.result === "incorrect") return "!border-error-red !bg-error-red";
+        return "!border-info-blue !bg-cyan-bright";
     };
 
     const borderClass = getStatusBorderClass();

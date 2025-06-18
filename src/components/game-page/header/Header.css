@@ -42,8 +42,8 @@
     @apply text-cyan-500 font-medium;
 }
 
-.logout-btn {
-    @apply px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-md text-sm font-medium cursor-pointer transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed;
+.header-btn {
+    @apply px-4 py-2 text-white rounded-md text-sm font-medium cursor-pointer transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed;
 }
 
 .menu-btn {
@@ -98,6 +98,6 @@
     @apply text-cyan-500 text-base font-medium break-words;
 }
 
-.drawer-logout-btn {
-    @apply w-full py-3 px-4 bg-red-600 hover:bg-red-700 text-white rounded-md text-sm font-medium cursor-pointer transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed;
+.mobile-drawer-btn {
+    @apply w-full py-3 px-4 my-3  text-white rounded-md text-sm font-medium cursor-pointer transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed;
 }

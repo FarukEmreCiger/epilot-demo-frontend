@@ -26,6 +26,7 @@ export const GuessPanel = () => {
         }
 
         console.log('User:', user);
+        let unsubscribeGuess: (() => void) | null = null;
 
         const activeGuessRef = ref(database, `users/${user.uid}/activeGuessId`);
         const unsubscribeActiveGuessId = onValue(activeGuessRef, (snapshot) => {
@@ -34,23 +35,24 @@ export const GuessPanel = () => {
             console.log('Active Guess ID:', activeGuessId);
 
             const guessRef = ref(database, `guesses/${user.uid}/${activeGuessId}`);
-            const unsubscribeGuess = onValue(guessRef, (guessSnapshot) => {
+            unsubscribeGuess = onValue(guessRef, (guessSnapshot) => {
                 const guessData = guessSnapshot.val();
                 console.log('Guess Data:', guessData);
                 if (guessData) {
                     setActiveGuess(guessData);
                     if (guessData.result) {
                         setIsGuessCompleted(true);
-                        unsubscribeGuess();
+                        unsubscribeGuess?.();
                     }
                 }
                 setLoading(false);
             });
-
-            return () => unsubscribeGuess();
         });
 
-        return () => unsubscribeActiveGuessId();
+        return () => {
+            unsubscribeActiveGuessId();
+            unsubscribeGuess?.();
+        };
     }, [user]);
 
     if (loading) {
