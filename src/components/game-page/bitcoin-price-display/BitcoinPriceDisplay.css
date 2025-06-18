@@ -4,6 +4,14 @@
   @apply text-[clamp(2rem,8vw,4rem)] text-white;
 }
 
+.bitcoin-price-animate-increase {
+  animation: price-increase 2s ease-in-out forwards;
+}
+
+.bitcoin-price-animate-decrease {
+  animation: price-decrease 2s ease-in-out forwards;
+}
+
 .bitcoin-price-green {
   @apply text-primary-green;
 }
@@ -22,4 +30,18 @@
 
 .bitcoin-timestamp {
   @apply bitcoin-pair-label text-text-gray mb-4;
+}
+
+@keyframes price-increase {
+  0% { @apply text-white; }
+  10% { @apply text-primary-green; }
+  90% { @apply text-primary-green; }
+  100% { @apply text-white; }
+}
+
+@keyframes price-decrease {
+  0% { @apply text-white; }
+  10% { @apply text-error-red; }
+  90% { @apply text-error-red; }
+  100% { @apply text-white; }
 }
