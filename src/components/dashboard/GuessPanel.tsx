@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useAuth } from '../../hooks/useAuth';
+import { useAuth } from '../../contexts/AuthContext';
 import { ref, onValue } from "firebase/database";
 import { database } from "../../firebase";
 import { Guess } from "../../types/guess";
@@ -33,16 +33,17 @@ export const GuessPanel = () => {
 
             console.log('Active Guess ID:', activeGuessId);
 
-            if (!activeGuessId && activeGuess) {
-                setIsGuessCompleted(true);
-                return;
-            }
-
             const guessRef = ref(database, `guesses/${user.uid}/${activeGuessId}`);
             const unsubscribeGuess = onValue(guessRef, (guessSnapshot) => {
                 const guessData = guessSnapshot.val();
                 console.log('Guess Data:', guessData);
-                setActiveGuess(guessData);
+                if (guessData) {
+                    setActiveGuess(guessData);
+                    if (guessData.result) {
+                        setIsGuessCompleted(true);
+                        unsubscribeGuess();
+                    }
+                }
                 setLoading(false);
             });
 
@@ -50,7 +51,7 @@ export const GuessPanel = () => {
         });
 
         return () => unsubscribeActiveGuessId();
-    }, [user, activeGuess]);
+    }, [user]);
 
     if (loading) {
         return <div>Loading...</div>;

@@ -1,9 +1,7 @@
 export interface PriceData {
   symbol: string;
   price: number;
-  timestamp: number;
-  change24h?: number;
-  changePercent24h?: number;
+  lastUpdated: number;
 }
 
 export interface PriceState {

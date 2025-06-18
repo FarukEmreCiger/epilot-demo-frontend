@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { ref, onValue } from 'firebase/database';
 import { database } from '../../firebase';
-import { useAuth } from '../../hooks/useAuth';
+import { useAuth } from '../../contexts/AuthContext';
 import { Box, Typography, Avatar } from '@mui/material';
 import { EmojiEvents, Star, LocalFireDepartment, Start } from '@mui/icons-material';
 

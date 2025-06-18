@@ -1,5 +1,5 @@
 import React from 'react';
-import { useAuth } from '../../hooks/useAuth';
+import { useAuth } from '../../contexts/AuthContext';
 import { usePrice } from '../../hooks/usePrice';
 import { Header } from './Header';
 import { BitcoinPriceDisplay } from './BitcoinPriceDisplay';
@@ -40,7 +40,7 @@ export const Dashboard: React.FC = () => {
             </div>
             <BitcoinPriceDisplay 
               price={data.price}
-              timestamp={data.timestamp}
+              timestamp={data.lastUpdated}
               formatPrice={formatPrice}
             />
 

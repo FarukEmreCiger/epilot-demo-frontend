@@ -1,10 +1,10 @@
 import React from 'react';
-import { useAuth } from './hooks/useAuth';
+import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { AuthContainer } from './components/auth/AuthContainer';
 import { Dashboard } from './components/dashboard/Dashboard';
 import './styles/components.css';
 
-function App() {
+function AppContent() {
   const { user, loading } = useAuth();
 
   if (loading) {
@@ -22,6 +22,14 @@ function App() {
     <div className="App">
       {user ? <Dashboard /> : <AuthContainer />}
     </div>
+  );
+}
+
+function App() {
+  return (
+    <AuthProvider>
+      <AppContent />
+    </AuthProvider>
   );
 }
 

@@ -19,9 +19,7 @@ export class PriceService {
             const priceData: PriceData = {
               symbol: 'BTC/USDT',
               price: data.price || data,
-              timestamp: data.timestamp || Date.now(),
-              change24h: data.change24h,
-              changePercent24h: data.changePercent24h
+              lastUpdated: data.lastUpdated || Date.now(),
             };
             callback(priceData);
           } else {

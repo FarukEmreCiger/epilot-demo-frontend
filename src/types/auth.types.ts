@@ -12,7 +12,6 @@ export interface RegisterForm {
 export interface AuthUser {
   uid: string;
   email: string | null;
-  isAnonymous: boolean;
   creationTime?: string;
 }
 

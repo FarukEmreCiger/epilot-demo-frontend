@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { LoginForm } from './LoginForm';
 import { RegisterForm } from './RegisterForm';
-import { useAuth } from '../../hooks/useAuth';
+import { useAuth } from '../../contexts/AuthContext';
 import '../../styles/components.css';
 
 export const AuthContainer: React.FC = () => {

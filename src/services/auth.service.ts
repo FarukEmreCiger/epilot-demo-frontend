@@ -82,7 +82,6 @@ export class AuthService {
     return {
       uid: firebaseUser.uid,
       email: firebaseUser.email,
-      isAnonymous: firebaseUser.isAnonymous,
       creationTime: firebaseUser.metadata.creationTime
     };
   }
