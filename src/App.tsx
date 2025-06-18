@@ -19,7 +19,7 @@ function AppContent() {
   }
 
   return (
-    <div className="App">
+    <div className="BitPredict">
       {user ? <Dashboard /> : <AuthContainer />}
     </div>
   );

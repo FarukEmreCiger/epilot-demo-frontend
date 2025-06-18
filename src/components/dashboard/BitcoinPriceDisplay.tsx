@@ -16,7 +16,7 @@ export const BitcoinPriceDisplay: React.FC<BitcoinPriceDisplayProps> = ({
 
   useEffect(() => {
     if (previousPriceRef.current !== null && price !== previousPriceRef.current) {
-      console.log("price ", price, "previousPriceRef.current ", previousPriceRef.current);
+      console.log(`price from: ${previousPriceRef.current} -> to: ${price}`);
       const priceIncreased = price > previousPriceRef.current;
       
       setPriceColorClass(priceIncreased ? 'bitcoin-price-green' : 'bitcoin-price-red');
