@@ -1,0 +1,115 @@
+.btn {
+    @apply px-4 py-3 rounded-lg font-semibold cursor-pointer transition-all duration-300 ease-in-out border-none outline-none flex items-center justify-center gap-2;
+    @apply disabled:opacity-70 disabled:cursor-not-allowed;
+}
+
+.btn-lg {
+    @apply px-6 py-4 text-lg;
+}
+
+.btn-primary {
+    @apply bg-primary-green text-white;
+    @apply hover:bg-primary-green-hover disabled:hover:bg-primary-green;
+}
+
+.btn-secondary {
+    @apply bg-transparent text-text-gray border-2 border-border-gray;
+    @apply hover:border-text-gray hover:text-white;
+    @apply disabled:hover:border-border-gray disabled:hover:text-text-gray;
+}
+
+.btn-danger {
+    @apply bg-error-red text-white;
+    @apply hover:bg-red-700 disabled:hover:bg-error-red;
+}
+
+.btn-outline-primary {
+    @apply bg-transparent text-primary-green border-2 border-primary-green;
+    @apply hover:bg-primary-green hover:text-white;
+    @apply disabled:hover:bg-transparent disabled:hover:text-primary-green;
+}
+
+.btn-outline-secondary {
+    @apply bg-transparent text-white border-2 border-white;
+    @apply hover:bg-white hover:text-dark-bg;
+    @apply disabled:hover:bg-transparent disabled:hover:text-white;
+}
+
+/* Input Components */
+.input {
+    @apply w-full p-4 text-base bg-input-bg border-2 border-border-gray rounded-lg text-white outline-none;
+    @apply transition-colors duration-300 ease-in-out box-border;
+    @apply focus:border-primary-green disabled:opacity-70;
+}
+
+.input-error {
+    @apply border-error-red focus:border-error-red;
+}
+
+/* Form Components */
+.form-container {
+    @apply max-w-sm w-full text-center;
+}
+
+.form-group {
+    @apply flex flex-col gap-2;
+}
+
+.form-grid {
+    @apply flex flex-col gap-5;
+}
+
+/* Message Components */
+.message {
+    @apply text-sm mt-2 text-left;
+}
+
+.message-center {
+    @apply text-center;
+}
+
+.message-error {
+    @apply text-error-red;
+}
+
+.message-success {
+    @apply text-primary-green;
+}
+
+.message-warning {
+    @apply text-warning-orange;
+}
+
+.message-info {
+    @apply text-info-blue;
+}
+
+.message-lg {
+    @apply text-base;
+}
+
+/* Title Components */
+.title {
+    @apply text-2xl font-bold text-white;
+}
+
+.title-lg {
+    @apply text-4xl font-bold mb-10 text-white;
+}
+
+.title-center {
+    @apply text-center;
+}
+
+.auth-container {
+    @apply min-h-screen bg-dark-bg text-white flex flex-col justify-center items-center p-5 font-sans;
+}
+
+/* Layout Components */
+.page-container {
+    @apply min-h-screen bg-dark-bg text-white flex flex-col justify-center items-center p-5 font-sans;
+}
+
+.loading-text {
+    @apply flex items-center justify-center gap-2;
+}

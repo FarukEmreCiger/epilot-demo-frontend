@@ -1,0 +1,25 @@
+.bitcoin-price {
+    @apply font-bold text-center break-all;
+    @apply transition-colors duration-300 ease-in-out;
+    @apply text-['clamp(2rem,8vw,4rem)'] text-white;
+}
+
+.bitcoin-price-green {
+    @apply text-primary-green;
+}
+
+.bitcoin-price-red {
+    @apply text-error-red;
+}
+
+.bitcoin-price-white {
+    @apply text-white;
+}
+
+.bitcoin-pair-label {
+    @apply text-center text-['clamp(1rem,1.3vw,2rem)'];
+}
+
+.bitcoin-timestamp {
+    @apply bitcoin-pair-label text-text-gray mb-4;
+}

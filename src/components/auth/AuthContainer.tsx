@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { LoginForm } from './LoginForm';
 import { RegisterForm } from './RegisterForm';
 import { useAuth } from '../../contexts/AuthContext';
-import '../../styles/components.css';
+import './AuthComponents.css';
 
 export const AuthContainer: React.FC = () => {
   const [isLoginMode, setIsLoginMode] = useState(true);

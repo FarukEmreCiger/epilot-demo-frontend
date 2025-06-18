@@ -1,4 +1,5 @@
 import { Button } from '@mui/material';
+import '../GuessButtons.css';
 
 export const MakeNewGuessButton = ({ onClick }: { onClick: () => void }) => {
     return (

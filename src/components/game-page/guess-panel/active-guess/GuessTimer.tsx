@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Box, Typography } from '@mui/material';
-import { Guess } from '../../types/guess';
+import { Guess } from '../../../../types/guess.type';
+import "./ActiveGuess.css";
 
 interface GuessTimerProps {
     guess: Guess;

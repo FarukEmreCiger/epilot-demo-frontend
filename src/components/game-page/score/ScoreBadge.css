@@ -1,0 +1,62 @@
+/* Game Status Badge Components */
+
+
+.score-container {
+    @apply rounded-3xl p-6 text-center relative overflow-hidden border border-white-18;
+    @apply bg-gradient-to-b from-purple-light to-purple-dark;
+    @apply shadow-lg shadow-blue-shadow;
+    @apply backdrop-blur;
+    @apply transition-all duration-300 ease-in-out;
+}
+
+.score-avatar {
+    @apply size-24 mx-auto mb-4 transition-all duration-300 ease-in-out p-8;
+}
+
+.score-avatar-animated {
+    @apply rotate-[360deg];
+}
+
+.score-avatar.MuiAvatar-root {
+    @apply bg-gold;
+}
+
+.score-avatar-green.MuiAvatar-root {
+    @apply bg-primary-green;
+}
+
+.score-avatar-red.MuiAvatar-root {
+    @apply bg-error-red;
+}
+
+.score-level-text {
+    @apply text-white mb-2 font-bold;
+}
+
+.score-number {
+    @apply !font-medium mb-2 text-['clamp(2rem,5vw,3rem)'] text-gold;
+    @apply transition-all duration-300 ease-in-out;
+}
+
+.score-number-green {
+    @apply text-primary-green;
+}
+
+.score-number-red {
+    @apply text-error-red;
+}
+
+.score-label {
+    @apply text-white font-medium tracking-widest;
+    @apply opacity-90;
+}
+
+.score-star-top {
+    @apply absolute opacity-30;
+    @apply top-2 right-2;
+}
+
+.score-star-bottom {
+    @apply absolute opacity-30;
+    @apply bottom-2 left-2;
+}

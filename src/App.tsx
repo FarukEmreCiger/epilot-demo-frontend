@@ -1,8 +1,8 @@
 import React from 'react';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { AuthContainer } from './components/auth/AuthContainer';
-import { Dashboard } from './components/dashboard/Dashboard';
-import './styles/components.css';
+import { GamePage } from './components/game-page/GamePage';
+import './styles/Common.css';
 
 function AppContent() {
   const { user, loading } = useAuth();
@@ -11,16 +11,13 @@ function AppContent() {
     return (
       <div className="min-h-screen bg-gray-800 text-white flex flex-col justify-center items-center">
         <div className="loading-spinner w-10 h-10"></div>
-        <p className="mt-5 text-lg">
-          Loading...
-        </p>
       </div>
     );
   }
 
   return (
     <div className="BitPredict">
-      {user ? <Dashboard /> : <AuthContainer />}
+      {user ? <GamePage /> : <AuthContainer />}
     </div>
   );
 }

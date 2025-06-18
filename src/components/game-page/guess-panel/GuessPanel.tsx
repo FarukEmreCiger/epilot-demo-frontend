@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import { useAuth } from '../../contexts/AuthContext';
+import { useAuth } from '../../../contexts/AuthContext';
 import { ref, onValue } from "firebase/database";
-import { database } from "../../firebase";
-import { Guess } from "../../types/guess";
+import { database } from "../../../firebase";
+import { Guess } from "../../../types/guess.type";
 import { MakeGuessPanel } from "./MakeGuessPanel";
-import { ActiveGuess } from "./ActiveGuess";
-import { MakeNewGuessButton } from "./MakeNewGuessButton";
+import { ActiveGuess } from "./active-guess/ActiveGuess";
+import { MakeNewGuessButton } from "./active-guess/MakeNewGuessButton";
 
 export const GuessPanel = () => {
     const { user } = useAuth();

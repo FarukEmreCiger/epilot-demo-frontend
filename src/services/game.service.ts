@@ -1,6 +1,6 @@
 import { httpsCallable } from 'firebase/functions';
 import { functions, auth } from '../firebase';
-import { Guess } from '../types/guess';
+import { Guess } from '../types/guess.type';
 
 export interface MakeGuessRequest {
   prediction: 'up' | 'down';

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import './BitcoinPriceDisplay.css';
 
 interface BitcoinPriceDisplayProps {
   price: number;

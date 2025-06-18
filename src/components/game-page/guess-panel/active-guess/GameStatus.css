@@ -1,0 +1,20 @@
+.game-status-container {
+    @apply text-center mb-6 p-4;
+}
+
+.game-status-emoji {
+    @apply mb-2 inline-block;
+}
+
+.game-status-emoji-animated {
+    @apply animate-pulse;
+}
+
+.game-status-text {
+    @apply !font-bold;
+    @apply tracking-widest;
+}
+
+.game-status-text-animated {
+    @apply animate-pulse;
+}

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { Guess } from "../../types/guess";
-import { priceService } from "../../services/price.service";
+import { Guess } from "../../../../types/guess.type";
+import "./ActiveGuess.css";
+import { priceService } from "../../../../services/price.service";
 import {
     Card,
     CardContent,
@@ -39,7 +40,7 @@ const GameStatus = ({ result }: { result?: string }) => {
     );
 };
 
-const GameField = ({ 
+const GameCardField = ({ 
     label, 
     value, 
     icon, 
@@ -51,17 +52,17 @@ const GameField = ({
     colorClass?: string; 
 }) => {
     return (
-        <Box className="game-field-box">
+        <Box className="game-card-field-box">
             <Avatar 
-                className={`game-field-avatar ${colorClass}`}
+                className={`game-card-field-avatar ${colorClass}`}
             >
                 {icon}
             </Avatar>
-            <Box className="game-field-content-box">
-                <Typography variant="body1" className="game-field-label">
+            <Box className="game-card-field-content-box">
+                <Typography variant="body1" className="game-card-field-label">
                     {label}
                 </Typography>
-                <Typography variant="body1" className="game-field-value">
+                <Typography variant="body1" className="game-card-field-value">
                     {value}
                 </Typography>
             </Box>
@@ -89,27 +90,27 @@ export const ActiveGuess = ({ activeGuess }: { activeGuess: Guess }) => {
     return (
         <Fade in={show} timeout={600}>
             <div
-                className={`game-paper overflow-hidden `}
+                className={`active-guess-paper overflow-hidden `}
             >
-                <Card className="game-card">
-                    <CardContent className="game-card-content">
+                <Card className="active-game-card">
+                    <CardContent className="active-game-card-content">
                         <GameStatus result={activeGuess.result} />  
                         <GuessTimer guess={activeGuess} />
                       
                         <List disablePadding>
-                            <GameField
+                            <GameCardField
                                 label="Prediction Time"
                                 value={new Date(activeGuess.createdAt).toLocaleString("en-US")}
                                 icon={<TimerIcon />}
                                 colorClass={borderClass} 
                             />
-                            <GameField
+                            <GameCardField
                                 label="Initial Price"
                                 value={priceService.formatPrice(activeGuess.initialPrice)}
                                 icon={<FlashOnIcon />}
                                 colorClass={borderClass}
                             />
-                            <GameField
+                            <GameCardField
                                 label="Prediction"
                                 value={activeGuess.prediction === 'up' ? <SvgIcon>
                                     <ArrowCircleUp />
@@ -119,7 +120,7 @@ export const ActiveGuess = ({ activeGuess }: { activeGuess: Guess }) => {
                                 icon={activeGuess.prediction === 'up' ? <TrendingUpIcon /> : <TrendingDownIcon />}
                                 colorClass={borderClass}
                             />
-                            <GameField
+                            <GameCardField
                                 label="Result Price"
                                 value={activeGuess.resolvedPrice ? 
                                     priceService.formatPrice(activeGuess.resolvedPrice) : 

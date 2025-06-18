@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { MakeGuessButton } from './makeGuess/MakeGuessButton';
-import { DirectionButton } from './makeGuess/DirectionButton';
-import { gameService } from '../../services/game.service';
+import { MakeGuessButton } from './MakeGuessButton';
+import { DirectionButton } from './DirectionButton';
+import { gameService } from '../../../services/game.service';
 
 type GuessDirection = 'up' | 'down' | null;
 
@@ -72,7 +72,7 @@ export const MakeGuessPanel: React.FC = () => {
             />
 
             {error && (
-                <div className="alert alert-error mt-4">
+                <div className="alert-error">
                     ❌ {error}
                 </div>
             )}

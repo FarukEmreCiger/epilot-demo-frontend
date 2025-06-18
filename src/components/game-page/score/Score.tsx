@@ -1,14 +1,15 @@
 import { useEffect, useState } from 'react';
 import { ref, onValue } from 'firebase/database';
-import { database } from '../../firebase';
-import { useAuth } from '../../contexts/AuthContext';
+import './ScoreBadge.css';
+import { database } from '../../../firebase';
+import { useAuth } from '../../../contexts/AuthContext';
 import { Box, Typography, Avatar } from '@mui/material';
 import { EmojiEvents, Star, LocalFireDepartment, Start } from '@mui/icons-material';
 
 export const Score = () => {
     const { user } = useAuth();
     const [score, setScore] = useState<number | undefined>(undefined);
-    const [color, setColor] = useState<string>('#FFD700');
+    const [status, setStatus] = useState<'stable' | 'up' | 'down'>('stable');
     const [isAnimating, setIsAnimating] = useState(false);
 
     useEffect(() => {
@@ -26,14 +27,14 @@ export const Score = () => {
                 setIsAnimating(true);
                 
                 if (score && newScore > score) {
-                    setColor('#4CAF50'); // Yeşil
+                    setStatus('up'); 
                 } else if (score && newScore < score) {
-                    setColor('#F44336'); // Kırmızı
+                    setStatus('down'); 
                 }
                 setScore(newScore);
 
                 setTimeout(() => {
-                    setColor('#FFD700');
+                    setStatus('stable');
                     setIsAnimating(false);
                 }, 3000);
             }
@@ -61,21 +62,21 @@ export const Score = () => {
 
     const getAvatarClassName = () => {
         let className = `score-avatar ${isAnimating ? 'score-avatar-animated' : ''}`;
-        if (color === '#4CAF50') className += ' score-avatar-green';
-        else if (color === '#F44336') className += ' score-avatar-red';
+        if (status === 'up') className += ' score-avatar-green';
+        else if (status === 'down') className += ' score-avatar-red';
         return className;
     };
 
     const getScoreNumberClassName = () => {
         let className = 'score-number';
-        if (color === '#4CAF50') className += ' score-number-green';
-        else if (color === '#F44336') className += ' score-number-red';
+        if (status === 'up') className += ' score-number-green';
+        else if (status === 'down') className += ' score-number-red';
         return className;
     };
 
     return (
         <Box
-            className={`score-container ${isAnimating ? 'score-container-animated score-container-shimmer' : ''}`}
+            className={`score-container`}
         >
             <Avatar className={getAvatarClassName()}>
                 {currentScoreData.icon}

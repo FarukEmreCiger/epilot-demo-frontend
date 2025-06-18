@@ -2,6 +2,7 @@ import React from 'react';
 import { IconButton, Container } from '@mui/material';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import './GuessButtons.css';
 
 type Direction = 'up' | 'down';
 

@@ -1,13 +1,13 @@
 import React from 'react';
 import { useAuth } from '../../contexts/AuthContext';
-import { usePrice } from '../../hooks/usePrice';
-import { Header } from './Header';
-import { BitcoinPriceDisplay } from './BitcoinPriceDisplay';
-import '../../styles/components.css';
-import { GuessPanel } from './GuessPanel';
-import { Score } from './Score';
+import { usePrice } from '../../hooks/use-price';
+import { Header } from './header/Header';
+import { BitcoinPriceDisplay } from './bitcoin-price-display/BitcoinPriceDisplay';
+import '../../styles/Common.css';
+import { GuessPanel } from './guess-panel/GuessPanel';
+import { Score } from './score/Score';
 
-export const Dashboard: React.FC = () => {
+export const GamePage: React.FC = () => {
   const { user, loading: authLoading } = useAuth();
   const { data, loading, error, formatPrice } = usePrice();
 
@@ -19,7 +19,7 @@ export const Dashboard: React.FC = () => {
     <>
       <Header loading={authLoading} />
 
-      <div className="min-h-screen bg-dark-bg text-white flex flex-col justify-center items-center p-5 pt-[90px] font-sans dashboard-main">
+      <div className="min-h-screen bg-dark-bg text-white flex flex-col justify-center items-center p-5 pt-[90px] dashboard-main">
         <div className="text-center max-w-[600px] w-full">
         {loading && !data && (
           <div className="text-lg text-gray-500">
@@ -35,7 +35,7 @@ export const Dashboard: React.FC = () => {
 
         {data && (
           <>
-            <div className="py-5">
+            <div className="pb-2">
               <Score />
             </div>
             <BitcoinPriceDisplay 

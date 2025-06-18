@@ -1,0 +1,103 @@
+/* Special Button Variants */
+.btn {
+    @apply px-4 py-3 rounded-lg font-semibold cursor-pointer transition-all duration-300 ease-in-out border-none outline-none flex items-center justify-center gap-2;
+    @apply disabled:opacity-70 disabled:cursor-not-allowed;
+}
+
+.btn-lg {
+    @apply px-6 py-4 text-lg;
+}
+
+.btn-gradient {
+    @apply bg-gradient-to-r from-blue-500 to-blue-600 text-white;
+    @apply hover:from-blue-600 hover:to-blue-700 disabled:hover:from-gray-500 disabled:hover:to-gray-600;
+    @apply shadow-lg shadow-blue-500/40 hover:shadow-xl hover:shadow-blue-500/60;
+    @apply transform hover:-translate-y-0.5 active:translate-y-0;
+    @apply disabled:from-gray-500 disabled:to-gray-600 disabled:shadow-gray-500/30;
+}
+
+.btn-rounded {
+    @apply rounded-full;
+}
+
+.btn-guess {
+    @apply btn btn-gradient btn-rounded btn-lg;
+    @apply min-w-48 px-9 py-3;
+}
+
+/* Material-UI Override */
+.btn-guess.MuiButton-root {
+    @apply bg-gradient-to-r from-blue-500 to-blue-600 text-white;
+    @apply hover:from-blue-600 hover:to-blue-700;
+    @apply shadow-lg shadow-blue-500/40 hover:shadow-xl hover:shadow-blue-500/60;
+    @apply transform hover:-translate-y-0.5 active:translate-y-0;
+    @apply rounded-full px-9 py-3 text-lg font-semibold min-w-48;
+    @apply transition-all duration-300 ease-in-out;
+    @apply disabled:from-gray-500 disabled:to-gray-600 disabled:shadow-gray-500/30;
+    @apply disabled:hover:transform-none;
+}
+
+.btn-new-guess {
+    @apply btn btn-rounded btn-lg;
+    @apply px-6 py-3 mt-5 text-xl;
+    @apply animate-pulse;
+}
+
+.btn-new-guess.MuiButton-root {
+    @apply bg-info-blue text-white rounded-full;
+    @apply px-6 py-3 mt-5 text-xl font-semibold;
+    @apply hover:bg-info-blue-hover;
+    @apply transition-transform duration-200 ease-in-out;
+    @apply animate-pulse;
+}
+
+/* Direction Button Components */
+.btn-direction {
+    @apply transition-all duration-200 ease-in-out;
+    @apply transform scale-100;
+}
+
+.btn-direction-selected {
+    @apply scale-110;
+}
+
+.btn-up {
+    @apply bg-green-100 hover:bg-green-200;
+}
+
+.btn-up-selected {
+    @apply bg-green-400 border border-green-800 hover:bg-green-500;
+}
+
+.btn-down {
+    @apply bg-red-100 hover:bg-red-200;
+}
+
+.btn-down-selected {
+    @apply bg-red-400 border border-red-800 hover:bg-red-500;
+}
+
+/* Material-UI IconButton Override */
+.btn-up.MuiIconButton-root {
+    @apply bg-green-100 hover:bg-green-200;
+    @apply transition-all duration-200 ease-in-out;
+}
+
+.btn-up-selected.MuiIconButton-root {
+    @apply bg-green-400 border border-green-800 hover:bg-green-500;
+    @apply scale-110;
+}
+
+.btn-down.MuiIconButton-root {
+    @apply bg-red-100 hover:bg-red-200;
+    @apply transition-all duration-200 ease-in-out;
+}
+
+.btn-down-selected.MuiIconButton-root {
+    @apply bg-red-400 border border-red-800 hover:bg-red-500;
+    @apply scale-110;
+}
+
+.direction-container {
+    @apply flex justify-center p-2;
+}

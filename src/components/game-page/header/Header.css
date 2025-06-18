@@ -1,0 +1,103 @@
+.header-desktop {
+    @apply fixed top-0 left-0 right-0 h-[70px] bg-gray-900 border-b border-gray-600 hidden md:flex items-center justify-between px-5 z-[1000] shadow-lg;
+}
+
+@media (min-width: 768px) {
+    .header-desktop {
+        display: flex;
+    }
+}
+
+.header-mobile {
+    @apply fixed top-0 left-0 right-0 h-[60px] bg-gray-900 border-b border-gray-600 flex md:hidden items-center justify-between px-4 z-[1000] shadow-lg;
+}
+
+@media (min-width: 768px) {
+    .header-mobile {
+        display: none;
+    }
+}
+
+.logo {
+    @apply text-2xl font-bold text-cyan-500;
+}
+
+.logo-mobile {
+    @apply text-xl font-bold text-cyan-500;
+}
+
+.user-info {
+    @apply flex items-center gap-5;
+}
+
+.user-welcome {
+    @apply text-white text-sm flex items-center gap-2;
+}
+
+.welcome-text {
+    @apply text-gray-500 text-xs;
+}
+
+.user-email {
+    @apply text-cyan-500 font-medium;
+}
+
+.logout-btn {
+    @apply px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-md text-sm font-medium cursor-pointer transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed;
+}
+
+.menu-btn {
+    @apply bg-transparent border-0 text-white text-2xl cursor-pointer p-1;
+}
+
+.spacer {
+    @apply w-[34px];
+}
+
+.overlay {
+    @apply fixed inset-0 bg-black/50 z-[1500] block md:hidden;
+}
+
+@media (min-width: 768px) {
+    .overlay {
+        display: none;
+    }
+}
+
+.drawer {
+    @apply fixed top-0 left-0 bottom-0 w-[280px] bg-gray-900 border-r border-gray-600 z-[1600] flex flex-col p-5 transition-transform duration-300 ease-in-out md:hidden;
+}
+
+@media (min-width: 768px) {
+    .drawer {
+        display: none;
+    }
+}
+
+.drawer.open {
+    @apply translate-x-0;
+}
+
+.drawer.closed {
+    @apply -translate-x-full;
+}
+
+.close-btn {
+    @apply self-end bg-transparent border-0 text-white text-2xl cursor-pointer p-1 mb-5;
+}
+
+.drawer-user-info {
+    @apply py-5 border-b border-gray-600 mb-5;
+}
+
+.drawer-welcome-text {
+    @apply text-gray-500 text-xs mb-1;
+}
+
+.drawer-user-email {
+    @apply text-cyan-500 text-base font-medium break-words;
+}
+
+.drawer-logout-btn {
+    @apply w-full py-3 px-4 bg-red-600 hover:bg-red-700 text-white rounded-md text-sm font-medium cursor-pointer transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed;
+}

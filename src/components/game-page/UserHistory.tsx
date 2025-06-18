@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Guess } from "../../types/guess";
+import { Guess } from "../../types/guess.type";
 import { gameService } from "../../services/game.service";
 import { Button, CircularProgress, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from "@mui/material";
 

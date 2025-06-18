@@ -1,4 +1,5 @@
 import { Box, Typography } from "@mui/material";
+import './GameStatus.css';
 
 interface GameStatusBadgeProps {
   emoji: string;

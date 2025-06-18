@@ -1,0 +1,18 @@
+/* Alert Components */
+.alert {
+  @apply p-3 rounded-lg border text-sm;
+}
+
+.alert-error {
+  @apply alert mt-4 bg-error-red bg-opacity-10 border-error-red text-error-red;
+}
+
+/* Loading Components */
+.spinner {
+  @apply w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  @apply size-10 border-4 border-white border-t-transparent rounded-full animate-spin;
+}

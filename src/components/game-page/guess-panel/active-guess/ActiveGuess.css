@@ -1,0 +1,44 @@
+/* Active Guess Components */
+.active-guess-paper {
+    @apply rounded-3xl overflow-hidden bg-dark-navy;
+}
+
+.active-game-card {
+    @apply !bg-transparent;
+}
+
+.active-game-card-content {
+    @apply p-6;
+}
+
+.game-card-field-box {
+    @apply flex items-center p-4 mb-2 rounded-lg;
+    @apply transition-all duration-200 ease-in-out;
+    @apply bg-white-05 border border-white-10;
+}
+
+.game-card-field-avatar {
+    @apply mr-4 size-10;
+}
+
+.game-card-field-content-box {
+    @apply flex-1 flex justify-between items-center;
+}
+
+.game-card-field-label {
+    @apply font-medium text-text-gray;
+}
+
+.game-card-field-value {
+    @apply font-medium text-white;
+}
+
+/* Guess Timer Components */
+.guess-timer-container {
+    @apply flex flex-row items-center justify-center w-full mb-4;
+    @apply mt-[-0.25rem];
+}
+
+.guess-timer-text {
+    @apply !font-bold font-mono text-cyan-bright;
+}
