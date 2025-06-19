@@ -13,20 +13,19 @@
     @apply size-24 mx-auto mb-4 transition-all duration-300 ease-in-out p-8;
 }
 
-.score-avatar-animated {
-    @apply rotate-[360deg];
-}
-
 .score-avatar.MuiAvatar-root {
     @apply bg-gold;
 }
 
 .score-avatar-green.MuiAvatar-root {
     @apply bg-primary-green;
+    animation: rotate 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+
 }
 
 .score-avatar-red.MuiAvatar-root {
     @apply bg-error-red;
+    animation: rotate 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
 .score-level-text {
@@ -59,4 +58,16 @@
 .score-star-bottom {
     @apply absolute opacity-30;
     @apply bottom-2 left-2;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
 }
