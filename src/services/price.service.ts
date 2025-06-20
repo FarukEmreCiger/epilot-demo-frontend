@@ -6,7 +6,7 @@ export class PriceService {
   private priceRef: DatabaseReference;
 
   constructor() {
-    this.priceRef = ref(database, 'exchange/btcusdt/current/price');
+    this.priceRef = ref(database, 'exchange/btcusdt/current');
   }
 
   subscribeToPrice(callback: (priceData: PriceData | null, error?: string) => void): () => void {
@@ -18,7 +18,7 @@ export class PriceService {
             const data = snapshot.val();
             const priceData: PriceData = {
               symbol: 'BTC/USDT',
-              price: data.price || data,
+              price: data.price,
               lastUpdated: data.lastUpdated || Date.now(),
             };
             callback(priceData);
